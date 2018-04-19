@@ -76,6 +76,7 @@
                  <th>Психология</th>
                  <th>Физика</th>
              </tr>
+
              <tr>
                  <td id="studentName"></td>
                  <td></td>
@@ -130,8 +131,35 @@
              <div class="col-md-4 col-sm-2"></div>
          </div>
      </div>
+     <div class="container" style="padding: 60px 0 0 0">
+         <p>
+             Вот как будет выглядеть код на языке программирования <b>Pascal:</b></p><br>
+             <div class="pascalCode">
+             <pre>
+                 <b>Var</b> n, i, j, quantityMark, quantityStudents, mark : <b>longint</b>;<br>
+                 <b>Begin</b><br>
+                   writeln('Введите количество учеников');<br>
+                   readln(n);<br>
+                 <br>
+                   <b>for</b> i:= 1 <b>to</b> n <b>do</b><br>
+                      <b>begin</b><br>
+                        <b>writeln</b>('Введите оценки ученика № ',i);<br>
+                          quantityMark:=0;<br>
+                        <b>for</b> j:= 1 <b>to</b> 5 <b>do</b><br>
+                           begin<br>
+                              readln(mark);<br>
+                              if (mark = 7) or (mark = 8) or (mark = 9) <b>then inc</b>(quantityMark);<br>
+                           <b>end</b>;<br>
+                        <b>if</b> quantityMark = 5 <b>then</b> <b>inc</b>(quantityStudents);<br>
+                      <b>end</b>;<br>
+                 <br>
+                    <b>writeln</b>('Количество учеников, сдавших экзамен на 7,8 или 9: ',quantityStudents);<br>
+                 <br>
+                 <b>End.</b>
+             </pre>
+             </div>
+     </div>
  </div>
- .
  <footer>
      <div class="fot-top">Contacts</div>
      <div class="footer-content">

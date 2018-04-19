@@ -40,11 +40,14 @@ function insertRandom() {
 table.addEventListener('click', insertInput, false);
 function insertInput(event) {
     var target = event.target;
-    if (target.tagName === 'TD' && target.id !== 'addRow') {
+    if (target.tagName === 'TD') {
         var value = target.innerText || '';
-
-        target.innerHTML = '<input id="inpMask" type="text" onblur="setText(event)" value="' + value + '">';
-        table.getElementsByTagName('input')[0].focus();
+        if (target.id !== 'studentName') {
+            target.innerHTML = '<input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, \'\').replace(/(\\..*)\\./g, \'$1\');" onblur="setText(event)" value="' + value + '">';
+        } else {
+            target.innerHTML = '<input type="text" oninput="this.value = this.value.replace(/[^а-яА-Я]/g, \'\').replace(/(\\..*)\\./g, \'$1\');" onblur="setText(event)" value="' + value + '">';
+        }
+            table.getElementsByTagName('input')[0].focus();
     }
 }
 
